@@ -12,7 +12,7 @@ import {
   MapPin, 
   ExternalLink, 
   Code2, 
-  Database, 
+  Database,
   Terminal, 
   Cpu, 
   Award, 
@@ -34,7 +34,7 @@ export default function App() {
   });
 
   useEffect(() => {
-    document.title = "Cristiano Mafra Junior - Resume";
+    document.title = "Cristiano Mafra Junior";
     if (isDarkMode) {
       document.documentElement.classList.add('dark');
     } else {
@@ -56,8 +56,7 @@ export default function App() {
     { name: "PostgreSQL", icon: <Database className="w-4 h-4" /> },
     { name: "Docker", icon: <Terminal className="w-4 h-4" /> },
     { name: "Git", icon: <Github className="w-4 h-4" /> },
-    { name: "APIs REST", icon: <ExternalLink className="w-4 h-4" /> },
-    { name: "XML/JSON", icon: <Code2 className="w-4 h-4" /> },
+    { name: "NestJs", icon: <Code2 className="w-4 h-4" /> },
     { name: "Linux", icon: <Terminal className="w-4 h-4" /> },
   ];
 
@@ -67,13 +66,13 @@ export default function App() {
       role: "Desenvolvedor Odoo",
       period: "Julho de 2025 - Presente",
       location: "Ribeirão Preto, São Paulo, Brasil",
-      description: "Atuo no desenvolvimento, customização e evolução de soluções ERP sob medida. Foco em qualidade, performance e aderência aos processos do cliente.",
+      description: "Desenvolvimento e customização de soluções ERP sob medida, com foco em qualidade, performance e aderência aos processos de negócio.",
       tasks: [
-        "Desenvolvimento e manutenção de módulos Odoo",
+        "Desenvolvimento e manutenção de módulos Odoo customizados",
         "Implementação de regras de negócio complexas",
-        "Integrações fiscais e governamentais (NF-e, CT-e, NFSe, PNCP, CNAB)",
-        "Customizações em módulos financeiros, contábeis, vendas e CRM",
-        "Escrita de testes automatizados e otimização de código"
+        "Integrações com obrigações fiscais e governamentais (NF-e, CT-e, NFSe, PNCP, CNAB)",
+        "Customização de módulos financeiros, contábeis, de vendas e CRM",
+        "Escrita de testes automatizados e otimização de desempenho"
       ]
     },
     {
@@ -81,21 +80,22 @@ export default function App() {
       role: "Desenvolvedor Odoo",
       period: "Dezembro de 2023 - Julho de 2025",
       location: "São João Batista, Santa Catarina, Brasil",
-      description: "Desenvolvimento de soluções back-end especializadas em Odoo para atender regras de negócio específicas.",
+      description: "Desenvolvimento back-end de soluções Odoo com foco na localização brasileira e conformidade fiscal.",
       tasks: [
-        "Atuação direta em projetos da localização brasileira da OCA",
+        "Contribuição direta em projetos da localização brasileira da OCA",
         "Desenvolvimento da biblioteca open source BrazilFiscalReport",
-        "Migração de módulos entre versões Odoo 14 e 16",
+        "Migração de módulos entre as versões Odoo 14 e 16",
         "Geração e impressão de documentos fiscais (DANFE, DACTE, DAMDFE)"
       ]
     }
   ];
 
   const ocaRankings = [
-    { month: "Novembro", rank: "8º lugar" },
-    { month: "Dezembro", rank: "11º lugar" },
-    { month: "Outubro", rank: "13º lugar" },
-    { year: "Anual", rank: "29º lugar" }
+    { label: "Novembro 2025", rank: "8º lugar" },
+    { label: "Dezembro 2025", rank: "11º lugar" },
+    { label: "Outubro 2025", rank: "13º lugar" },
+    { label: "Ranking Anual 2025", rank: "29º lugar" },
+    { label: "Janeiro 2026", rank: "3º lugar" }
   ];
 
   return (
@@ -103,7 +103,7 @@ export default function App() {
       {/* Navigation / Header */}
       <header className="sticky top-0 z-50 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md border-b border-gray-200 dark:border-zinc-800">
         <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-          <span className="font-bold text-lg tracking-tight">Cristiano<span className="text-emerald-600">.</span></span>
+          <span className="font-bold text-lg tracking-tight">Cristiano Mafra Junior<span className="text-emerald-600"></span></span>
           <nav className="hidden md:flex gap-8 text-sm font-medium text-gray-500 dark:text-zinc-400">
             <a href="#about" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Sobre</a>
             <a href="#experience" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Experiência</a>
@@ -194,7 +194,7 @@ export default function App() {
             <div className="space-y-3">
               {ocaRankings.map((item, idx) => (
                 <div key={idx} className="flex justify-between items-center text-sm border-b border-emerald-200/50 dark:border-emerald-800/50 pb-2 last:border-0">
-                  <span className="text-emerald-700/70 dark:text-emerald-400/70">{item.month || `Ranking ${item.year}`}</span>
+                  <span className="text-emerald-700/70 dark:text-emerald-400/70">{item.label}</span>
                   <span className="font-bold text-emerald-800 dark:text-emerald-300">{item.rank}</span>
                 </div>
               ))}
