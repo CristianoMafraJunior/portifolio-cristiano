@@ -34,6 +34,7 @@ export default function App() {
   });
 
   useEffect(() => {
+    document.title = "Cristiano Mafra Junior - Resume";
     if (isDarkMode) {
       document.documentElement.classList.add('dark');
     } else {
@@ -98,7 +99,7 @@ export default function App() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#F8F9FA] dark:bg-zinc-950 text-[#1A1A1A] dark:text-zinc-100 font-sans selection:bg-emerald-100 dark:selection:bg-emerald-900 selection:text-emerald-900 dark:selection:text-emerald-100 transition-colors duration-300">
+    <div className={`min-h-screen ${isDarkMode ? 'dark' : ''} bg-[#F8F9FA] dark:bg-zinc-950 text-[#1A1A1A] dark:text-zinc-100 font-sans selection:bg-emerald-100 dark:selection:bg-emerald-900 selection:text-emerald-900 dark:selection:text-emerald-100 transition-colors duration-300`}>
       {/* Navigation / Header */}
       <header className="sticky top-0 z-50 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md border-b border-gray-200 dark:border-zinc-800">
         <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
